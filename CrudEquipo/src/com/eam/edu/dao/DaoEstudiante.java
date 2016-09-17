@@ -16,6 +16,10 @@ import java.util.ArrayList;
 public class DaoEstudiante {
     
     private ArrayList<Estudiante> listadoEstudiantes;
+    
+    public DaoEstudiante(){
+        listadoEstudiantes = new ArrayList<>();
+    }
 
     
    public int create(Estudiante e){
@@ -59,6 +63,7 @@ public class DaoEstudiante {
        }
        return false;
    }
+   
    
    
    
