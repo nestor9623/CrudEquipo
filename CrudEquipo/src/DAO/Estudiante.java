@@ -5,19 +5,10 @@
  */
 package DAO;
 
-import java.util.ArrayList;
-
 /**
  *
- * @author 411pc20
+ * @author 411pc23
  */
-public class DaoEstudiante {
-    
-    private ArrayList<Estudiante> listadoEstudiantes;
-
-    
-   
-    
-    
+class Estudiante {
     
 }
