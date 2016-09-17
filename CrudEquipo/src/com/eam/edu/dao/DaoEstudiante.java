@@ -38,9 +38,26 @@ public class DaoEstudiante {
    }
    
    
-   public int remove(String ced){
-       return 0;
+   public boolean remove(String ced){
+       return  listadoEstudiantes.remove(find(ced));
        
+   }
+   
+   
+   public boolean edit(Estudiante e){
+       int pos = -1;
+       for(int i=0;i<listadoEstudiantes.size();i++){
+           if(listadoEstudiantes.get(i).getCedula().equals(e.getCedula())){
+                pos = i;
+                break;
+           }
+       }
+       if(pos!=-1){
+        
+             listadoEstudiantes.set(pos, e);
+             return true;
+       }
+       return false;
    }
    
    
