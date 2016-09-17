@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package com.eam.edu.dao;
 
+
+import com.eam.edu.entidades.Estudiante;
 import java.util.ArrayList;
 
 /**

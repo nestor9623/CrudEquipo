@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package DAO;
+package com.eam.edu.entidades;
 
 /**
  *
  * @author 411pc23
  */
-class Estudiante {
+public class Estudiante {
     private String cedula;
     private String nombre;
     private String apellido;
