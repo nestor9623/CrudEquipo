@@ -5,17 +5,22 @@
  */
 package Gui;
 
+import com.eam.edu.Controlador.Controller;
+import com.eam.edu.entidades.Estudiante;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author 411pc20
  */
 public class VistaPrincipal extends javax.swing.JFrame {
-
+ private Controller controlador = new Controller();
     /**
      * Creates new form VistaPrincipal
      */
     public VistaPrincipal() {
         initComponents();
+       
     }
 
     /**
@@ -27,21 +32,191 @@ public class VistaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jTFNombre = new javax.swing.JTextField();
+        jTFApellido = new javax.swing.JTextField();
+        jTFCedula = new javax.swing.JTextField();
+        jTFEmail = new javax.swing.JTextField();
+        jBCrear = new javax.swing.JButton();
+        jBuscar = new javax.swing.JButton();
+        jBModificar = new javax.swing.JButton();
+        jBElimar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos Personales"));
+
+        jLabel1.setText("Nombre:");
+
+        jLabel2.setText("Apellidos:");
+
+        jLabel3.setText("Cedula:");
+
+        jLabel4.setText("Email:");
+
+        jBCrear.setText("CREAR");
+        jBCrear.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBCrearActionPerformed(evt);
+            }
+        });
+
+        jBuscar.setText("BUSCAR");
+        jBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBuscarActionPerformed(evt);
+            }
+        });
+
+        jBModificar.setText("MODIFICAR");
+        jBModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBModificarActionPerformed(evt);
+            }
+        });
+
+        jBElimar.setText("ELIMINAR");
+        jBElimar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBElimarActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel4))
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTFNombre)
+                    .addComponent(jTFApellido)
+                    .addComponent(jTFCedula)
+                    .addComponent(jTFEmail, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jBCrear)
+                .addGap(18, 18, 18)
+                .addComponent(jBuscar)
+                .addGap(18, 18, 18)
+                .addComponent(jBModificar)
+                .addGap(18, 18, 18)
+                .addComponent(jBElimar)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jTFApellido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jTFCedula, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jTFEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBCrear)
+                    .addComponent(jBuscar)
+                    .addComponent(jBModificar)
+                    .addComponent(jBElimar))
+                .addContainerGap(33, Short.MAX_VALUE))
+        );
+
+        jLabel5.setText("CRUD EN EQUIPO");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(132, 132, 132)
+                        .addComponent(jLabel5)))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(16, Short.MAX_VALUE)
+                .addComponent(jLabel5)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCrearActionPerformed
+        String nombre = jTFNombre.getText();
+        String apellido = jTFApellido.getText();
+        String cedula = jTFCedula.getText();
+        String email = jTFEmail.getText();
+        Estudiante estudiante = new Estudiante();
+        estudiante.setCedula(cedula);
+        estudiante.setApellido(apellido);
+        estudiante.setEmail(email);
+        estudiante.setNombre(nombre);
+        controlador.crear(estudiante);
+    }//GEN-LAST:event_jBCrearActionPerformed
+
+    private void jBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBuscarActionPerformed
+        // TODO add your handling code here:
+        String cedula = jTFCedula.getText();
+        Estudiante es = controlador.buscar(cedula);
+        if(es!=null){
+            jTFNombre.setText(es.getNombre());
+            jTFApellido.setText(es.getApellido());
+            jTFCedula.setText(es.getCedula());
+            jTFEmail.setText(es.getEmail());
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"USUARIO NO ENCONTRADO","ERROR",JOptionPane.ERROR_MESSAGE);
+        }
+    }//GEN-LAST:event_jBuscarActionPerformed
+
+    private void jBModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBModificarActionPerformed
+        String nombre = jTFNombre.getText();
+        String apellido = jTFApellido.getText();
+        String cedula = jTFCedula.getText();
+        String email = jTFEmail.getText();
+        Estudiante estudiante = new Estudiante();
+        estudiante.setCedula(cedula);
+        estudiante.setApellido(apellido);
+        estudiante.setEmail(email);
+        estudiante.setNombre(nombre);
+        controlador.modificar(estudiante);
+    }//GEN-LAST:event_jBModificarActionPerformed
+
+    private void jBElimarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBElimarActionPerformed
+        String cedula = jTFCedula.getText();
+        controlador.eliminar(cedula);
+    }//GEN-LAST:event_jBElimarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -79,5 +254,19 @@ public class VistaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBCrear;
+    private javax.swing.JButton jBElimar;
+    private javax.swing.JButton jBModificar;
+    private javax.swing.JButton jBuscar;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JTextField jTFApellido;
+    private javax.swing.JTextField jTFCedula;
+    private javax.swing.JTextField jTFEmail;
+    private javax.swing.JTextField jTFNombre;
     // End of variables declaration//GEN-END:variables
 }

@@ -15,7 +15,7 @@ import javax.swing.JOptionPane;
  */
 public class Controller {
    
-    private DaoEstudiante dao;
+    private DaoEstudiante dao = new DaoEstudiante();
     
     
     
@@ -35,29 +35,33 @@ public class Controller {
                 return es;
     }
     
-    public boolean modificar(Estudiante e){
+    public void modificar(Estudiante e){
         boolean modificado;
        modificado= dao.edit(e);
        if(modificado ==true){
-           System.out.println("SE MODIFICO");
-           return true;
+           JOptionPane.showMessageDialog(null,"DATOS MODIFICADOS");
+           
+       }else{
+           JOptionPane.showMessageDialog(null,"ERROR AL MODIFICAR EL ESTUDIANTE","ERROR",JOptionPane.ERROR_MESSAGE);
        }
        
-       return false;
+      
     }
     
     
-    public boolean eliminar(String cedula){
+    public void eliminar(String cedula){
        
         boolean eliminado;
         eliminado = dao.remove(cedula);
         
         if(eliminado == true){
-            System.out.println("SE ELIMINO EL ESTUDIANTE");
-            return true;
+            JOptionPane.showMessageDialog(null,"estudiante eliminado");
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"error al eliminar el usuario","error",JOptionPane.ERROR_MESSAGE);
         }
         
-        return false;
+        
     }
     
     
